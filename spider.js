@@ -1,19 +1,7 @@
 var scrapy = require('node-scrapy'),
-url = 'https://github.com/cikai/nodejs-spider',
+url = 'https://www.baidu.com',
 model = {
-    author: '.author',
-    repo: '.js-current-repository',
-    stats: {
-        commits: '.commits .num',
-        branches: '.numbers-summary > li.commits + li .num',
-        releases: '.numbers-summary > li.commits + li + li .num',
-        contributors: '.numbers-summary > li.commits + li + li + li .num',
-        social: {
-            stars: '.star-button + .social-count',
-            forks: '.fork-button + .social-count'
-        }
-    },
-    files: '.js-directory-link'
+    百度右上角的链接: '.mnav'
 }
 
 scrapy.scrape(url, model, function(err, data) {
